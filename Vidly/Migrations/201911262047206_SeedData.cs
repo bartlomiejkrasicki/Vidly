@@ -1,0 +1,24 @@
+﻿namespace Vidly.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class SeedData : DbMigration
+    {
+        public override void Up()
+        {
+            Sql("INSERT INTO MembershipTypes (Id, Name, SignUpFee, DurationInMonths, DiscountRate) VALUES (1, 'Free pass', 0, 0, 0)");
+            Sql("INSERT INTO MembershipTypes (Id, Name, SignUpFee, DurationInMonths, DiscountRate) VALUES (2, 'Monthly', 30, 1, 10)");
+            Sql("INSERT INTO MembershipTypes (Id, Name, SignUpFee, DurationInMonths, DiscountRate) VALUES (3, 'Quarterly', 90, 3, 15)");
+            Sql("INSERT INTO MembershipTypes (Id, Name, SignUpFee, DurationInMonths, DiscountRate) VALUES (4, 'Annual', 300, 12, 15)");
+            Sql("INSERT INTO Genres (Name) VALUES ('Comedy')");
+            Sql("INSERT INTO Genres (Name) VALUES ('Action')");
+            Sql("INSERT INTO Genres (Name) VALUES ('Family')");
+            Sql("INSERT INTO Genres (Name) VALUES ('Romance')");
+        }
+        
+        public override void Down()
+        {
+        }
+    }
+}
